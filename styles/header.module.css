@@ -1,0 +1,45 @@
+.header{
+     text-align: center;
+     margin-top: 5px;
+     margin-bottom: 36px;
+     padding: 5px;
+     background: #6c757d;
+    color: #fff;
+}
+
+.parent{
+    position: relative;
+    text-align: center;
+}
+
+.imageLanding{
+    z-index: -1;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+.child{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #0708086b;
+    width: 100%;
+    padding: 26px;
+}
+
+.test span {
+    position: unset !important;
+} 
+
+.textWhite {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+}
