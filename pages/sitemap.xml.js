@@ -4,7 +4,8 @@ const Sitemap = () => {
 };
 
 export const getServerSideProps = async ({ res }) => {
-  const BASE_URL = "http://localhost:3000";
+  // const BASE_URL = "http://localhost:3000";
+  const BASE_URL = "https://delightful-conkies-028434.netlify.app";
 
   const staticPaths = fs
     .readdirSync("pages")
