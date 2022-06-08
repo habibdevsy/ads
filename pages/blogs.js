@@ -3,10 +3,12 @@ import Nav from '/components/nav.js'
 import Header from '/components/header.js'
 import Footer from '/components/footer.js'
 import Contact from '/components/contact.js'
+import Head from '/components/head.js'
 
 export default function Blog({ posts }) {
     return (
       <>
+        <Head title = "إعلانات الحبيب" description = "إعلانك يحلق في سماء الكويت" keywords = "إعلانات الكويت" />
         <Nav />
         <Header />
           {posts.items.map((post) => ( 

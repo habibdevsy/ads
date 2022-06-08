@@ -17,7 +17,6 @@ export default ( { post }) => {
 
   return(
         <>
-       {console.log({description})}
            <Head title = { post.title } description = { description } url = { post.url } keywords = { keywords } />
            <Nav />
            <Header />
