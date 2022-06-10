@@ -3,8 +3,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: http://localhost:3000
+Host: https://ads-habib.netlify.app/
 
 # Sitemaps
-Sitemap: http://localhost:3000/sitemap.xml
-Sitemap: http://localhost:3000/serversite.xml
+Sitemap: https://ads-habib.netlify.app/sitemap.xml
+Sitemap: https://ads-habib.netlify.app//serversite.xml
