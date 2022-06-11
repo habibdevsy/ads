@@ -6,6 +6,24 @@ const defaultKeywords = '';
 const defaultOGURL = '';
 const defaultOGImage = '';
 
+function addProductJsonLd(name, title, url, description, imageUrl, keywords) {
+  return {
+    __html: `{
+      "@context" : "http://schema.org",
+      "@type" : "WebSite",
+      "@id": ${url},
+      "name" : ${name},
+      "headline": ${title},
+      "image" : ${imageUrl},
+      "inLanguage":"ar",
+      "url" : ${url},
+      "keywords": ${keywords},
+      "description": ${description},
+      "address":{"@type":"PostalAddress","addressLocality":"Kuwait","addressCountry":"Kuwait"}
+    }
+`,
+  };}
+
 const Head = (props) => (
   <NextHead>
     <meta charSet="UTF-8" />
@@ -27,6 +45,10 @@ const Head = (props) => (
     <meta property="og:image" content={props.ogImage || defaultOGImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={addProductJsonLd(props.name || '', props.title || '', props.url || '', props.description || '', props.img || '', props.keywords || '')}
+        />
   </NextHead>
 );
 
@@ -35,7 +57,8 @@ Head.propTypes = {
   description: string,
   keywords: string,
   url: string,
-  ogImage: string
+  ogImage: string,
+  img: string,
 };
 
 export default Head;

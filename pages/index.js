@@ -3,18 +3,20 @@ import homeStyle from '/styles/home.module.css';
 import Footer from '/components/footer.js'
 import Image from "next/image"
 import Contact from '/components/contact.js'
+import Head from '/components/head.js'
 
 export default () => {
   return(
   <div>
+     <Head title="إعلانات الحبيب"/>
     <Nav />
     <section>
       <div className = {homeStyle.parent+ " " + homeStyle.textWhite }>
         <Image className= {homeStyle.imageLanding}
               src = "/static/kuwaitTowers.webp"
               alt = "الكويت"
-              width = "800px"
-              height = "800px"
+              width = "800"
+              height = "800"
               objectFit = "cover"
               objectPosition = "center"
               priority = "hight"

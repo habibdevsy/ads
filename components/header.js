@@ -8,8 +8,8 @@ const Header = () => (
                 <Image className= {style.imageLanding}
                     src = "/static/kuwaitTowers.webp"
                     alt = "الكويت"
-                    width = "800px"
-                    height = "500px"
+                    width = "800"
+                    height = "500"
                     objectFit = "cover"
                     objectPosition = "center"
                     priority = "hight"
