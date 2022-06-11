@@ -15,7 +15,7 @@ export default function Blog({ posts }) {
             <div className="card" key={post.id}>
           
               {/* <Link href={`/blog/${post.id}`} as={`/posts/${encodeURIComponent(post.title)}`}> */}
-              <Link prefetch href={`/blog/${post.id}`}>
+              <Link href={`/blog/${post.id}`}>
               
               <a>
                   <div className="card-body">
@@ -35,7 +35,8 @@ export default function Blog({ posts }) {
     )
   }
   
-  export async function getStaticProps() {
+  // export async function getStaticProps() {
+  export async function getServerSideProps() {
     const res = await fetch('https://www.googleapis.com/blogger/v3/blogs/4115699089380273920/posts?key=AIzaSyCTyPxY1VlxuMroLwHG9gqPwea80ZG6l3Q')
 
     const posts = await res.json()
