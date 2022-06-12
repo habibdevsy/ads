@@ -25,3 +25,9 @@ module.exports = {
     NETLIFY_NEXT_PLUGIN_SKIP: true,
   },
 }
+module.exports = {
+  i18n: {
+    locales: ["ar"],
+    defaultLocale: "ar",
+  },
+};
