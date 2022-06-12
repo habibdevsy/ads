@@ -28,6 +28,7 @@ const Head = (props) => (
   <NextHead>
     <meta charSet="UTF-8" />
     <title>{props.title || ''}</title>
+    <meta name="google-site-verification" content="-2LcqfDSitK6wATymsfTsAcjtvPIoLpcJsRi82iI4Ao" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={props.description || defaultDescription} />
     <meta name="keywords" content={props.keywords || defaultKeywords} />

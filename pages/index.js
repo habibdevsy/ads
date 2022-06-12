@@ -9,6 +9,7 @@ export default () => {
   return(
   <div>
      <Head title="إعلانات الحبيب"/>
+
     <Nav />
     <section>
       <div className = {homeStyle.parent+ " " + homeStyle.textWhite }>
