@@ -12,7 +12,7 @@ module.exports = {
     ],
 
     additionalSitemaps:[
-      `${siteUrl}/serversite.xml`
+      `${siteUrl}serversite.xml`
   ]
    
   },

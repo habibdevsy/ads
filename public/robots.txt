@@ -7,4 +7,4 @@ Host: https://ads-habib.netlify.app/
 
 # Sitemaps
 Sitemap: https://ads-habib.netlify.app/sitemap.xml
-Sitemap: https://ads-habib.netlify.app//serversite.xml
+Sitemap: https://ads-habib.netlify.app/serversite.xml

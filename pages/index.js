@@ -8,7 +8,7 @@ import Head from '/components/head.js'
 export default () => {
   return(
   <div>
-     <Head title="إعلانات الحبيب"/>
+     <Head title="إعلانات الحبيب" description="إعلانات الحبيب,إعلانات الكويت,إعلانك يحلق في سماء الكويت" keywords="إعلانات,الكويت"/>
 
     <Nav />
     <section>
