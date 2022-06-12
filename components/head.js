@@ -11,14 +11,14 @@ function addProductJsonLd(name, title, url, description, imageUrl, keywords) {
     __html: `{
       "@context" : "http://schema.org",
       "@type" : "WebSite",
-      "@id": ${url},
-      "name" : ${name},
-      "headline": ${title},
-      "image" : ${imageUrl},
+      "@id": "${url}",
+      "name" : "${name}",
+      "headline": "${title}",
+      "image" : "${imageUrl}",
       "inLanguage":"ar",
-      "url" : ${url},
-      "keywords": ${keywords},
-      "description": ${description},
+      "url" : "${url}",
+      "keywords": "${keywords}",
+      "description": "${description}",
       "address":{"@type":"PostalAddress","addressLocality":"Kuwait","addressCountry":"Kuwait"}
     }
 `,
