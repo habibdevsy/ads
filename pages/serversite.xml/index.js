@@ -7,7 +7,7 @@ export const GetPost = async () => {
 };
 
 export const getServerSideProps = async (ctx) => {
-    const siteUrl = "https://ads-habib.netlify.app/";
+    const siteUrl = "https://ads-habib.netlify.app";
     const data = await GetPost();
     const fields = data === null || data === void 0 ? void 0 : data.items.map((data) => ({
         loc: `${siteUrl}/${data.id}`,
