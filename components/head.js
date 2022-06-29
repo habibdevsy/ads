@@ -8,21 +8,35 @@ const defaultOGImage = '';
 
 function addProductJsonLd(name, title, url, description, imageUrl, keywords) {
   return {
-    __html:JSON.stringify `{
       "@context" : "http://schema.org",
       "@type" : "WebSite",
-      "@id": "${url}",
-      "name" : "${name}",
-      "headline": "${title}",
-      "image" : "${imageUrl}",
-      "inLanguage":"ar",
-      "url" : "${url}",
-      "keywords": "${keywords}",
-      "description": "${description}",
-      "address":{"@type":"PostalAddress","addressLocality":"Kuwait","addressCountry":"Kuwait"}
+      "@id": url,
+      name : title,
+      headline: title,
+      image : imageUrl,
+      inLanguage:"ar",
+      url : url,
+      keywords: keywords,
+      description: description,
+      address:{"@type":"PostalAddress","addressLocality":"Kuwait","addressCountry":"Kuwait"}
     }
-`,
-  };}
+  }
+//   return {
+//     __html:JSON.stringify `{
+//       "@context" : "http://schema.org",
+//       "@type" : "WebSite",
+//       "@id": "${url}",
+//       "name" : "${name}",
+//       "headline": "${title}",
+//       "image" : "${imageUrl}",
+//       "inLanguage":"ar",
+//       "url" : "${url}",
+//       "keywords": "${keywords}",
+//       "description": "${description}",
+//       "address":{"@type":"PostalAddress","addressLocality":"Kuwait","addressCountry":"Kuwait"}
+//     }
+// `,
+//   };}
 
 const Head = (props) => (
   <NextHead>
@@ -48,7 +62,7 @@ const Head = (props) => (
     <meta property="og:image:height" content="630" />
     <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={addProductJsonLd(props.name || '', props.title || '', props.url || '', props.description || '', props.img || '', props.keywords || '')}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(addProductJsonLd(props.name || '', props.title || '', props.url || '', props.description || '', props.img || '', props.keywords || ''))}}
         />
   </NextHead>
 );
