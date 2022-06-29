@@ -8,7 +8,7 @@ const defaultOGImage = '';
 
 function addProductJsonLd(name, title, url, description, imageUrl, keywords) {
   return {
-    __html: `{
+    __html:JSON.stringify `{
       "@context" : "http://schema.org",
       "@type" : "WebSite",
       "@id": "${url}",
