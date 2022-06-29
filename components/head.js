@@ -5,38 +5,29 @@ const defaultDescription = '';
 const defaultKeywords = '';
 const defaultOGURL = '';
 const defaultOGImage = '';
-
-function addProductJsonLd(name, title, url, description, imageUrl, keywords) {
+function stripHTML(html) {
+  var one = html.replace(/<\/?[^>]+(>|$)/gm, "");
+  var two = one.replace(/[\r\n]\s*[\r\n]/gm, "");
+  return two;
+}
+function addProductJsonLd(name, title, url, description, imageUrl, keywords, tel) {
+  const desc = stripHTML(description)
+  const keyword = stripHTML(keywords)
   return {
-      "@context" : "http://schema.org",
-      "@type" : "WebSite",
-      "@id": url,
+      '@context' : "https://schema.org",
+      '@type' : "LocalBusiness",
+      '@id': url,
       name : title,
       headline: title,
       image : imageUrl,
       inLanguage:"ar",
       url : url,
-      keywords: keywords,
-      description: description,
-      address:{"@type":"PostalAddress","addressLocality":"Kuwait","addressCountry":"Kuwait"}
+      keywords: keyword,
+      description: desc,
+      telephone: tel,
+      address:{'@type':"PostalAddress","addressLocality":"Kuwait","addressCountry":"Kuwait"}
     }
   }
-//   return {
-//     __html:JSON.stringify `{
-//       "@context" : "http://schema.org",
-//       "@type" : "WebSite",
-//       "@id": "${url}",
-//       "name" : "${name}",
-//       "headline": "${title}",
-//       "image" : "${imageUrl}",
-//       "inLanguage":"ar",
-//       "url" : "${url}",
-//       "keywords": "${keywords}",
-//       "description": "${description}",
-//       "address":{"@type":"PostalAddress","addressLocality":"Kuwait","addressCountry":"Kuwait"}
-//     }
-// `,
-//   };}
 
 const Head = (props) => (
   <NextHead>
@@ -61,8 +52,9 @@ const Head = (props) => (
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <script
+          key={`jobJSON-${props.id}`}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(addProductJsonLd(props.name || '', props.title || '', props.url || '', props.description || '', props.img || '', props.keywords || ''))}}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(addProductJsonLd(props.name || '', props.title || '', props.url || '', props.description || '', props.img || '', props.keywords || '', props.tel || '')) }}
         />
   </NextHead>
 );
@@ -74,6 +66,7 @@ Head.propTypes = {
   url: string,
   ogImage: string,
   img: string,
+  tel: string
 };
 
 export default Head;

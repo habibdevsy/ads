@@ -23,7 +23,7 @@ export default ( { post }) => {
 
   return(
         <>
-           <Head title = { post.title } description = { description } url = { BASE_URL} keywords = { keywords } img = { img }/>
+           <Head title = { post.title } description = { description } url = { BASE_URL} keywords = { keywords } img = { img } tel = { tel }/>
            <Nav />
            <Header />
            <div className="container">
